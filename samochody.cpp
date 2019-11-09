@@ -3,18 +3,21 @@ using namespace std;
 int n,m,a,b,smax,s,s1,x,y;
 int t[1000][1000],sk[1000][1000],sw[1000][1000];
 int main()
-{
-    cin>> n>>m;
+{   ifstream we;
+    ofstream wy;
+    we.open("in.txt");
+    wy.open("out.txt");
+    we>> n>>m;
 
     for(int i=1; i<=m; i++)
     {
         for(int j=1; j<=n; j++)
         {
-            cin>>t[i][j];
+            we>>t[i][j];
         }
 
     }
-    cin>>a>>b;
+    we>>a>>b;
     for(int i=1; i<=n; i++)
     {
         sk[1][i]=t[1][i];
@@ -70,5 +73,7 @@ int main()
 
 
     }
-    cout<<smax<<endl<<x<<" "<<y;
+    wy<<smax<<endl<<x<<" "<<y;
+    we.close();
+    wy.close();
 }
